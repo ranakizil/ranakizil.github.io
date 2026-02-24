@@ -4,21 +4,35 @@ title: "An Introduction to Neural Networks with MNIST"
 date: 2026-02-24
 ---
 
-### The Hello World of Machine Learning
-The MNIST database (Modified National Institute of Standards and Technology database) is a large database of handwritten digits that is commonly used for training various image processing systems.
+# How a Neural Network "Sees" a Digit 🧠🔢
 
-#### Why MNIST?
-It’s the perfect playground for neural networks because:
-* The data is **pre-processed** (centered and sized).
-* The problem is **well-defined** (identify 0-9).
-* Results are **easy to interpret**.
+![Neural Network Architecture](mnist.png)
 
-> "Neural networks are inspired by the biological brain, but they are essentially a series of mathematical operations."
+This diagram illustrates a **Feedforward Neural Network** (specifically a Multi-Layer Perceptron) performing one of the most famous tasks in AI: recognizing handwritten digits.
 
 ---
 
-### Basic Architecture
-In a simple feed-forward network for MNIST, we typically see:
-1. **Input Layer:** 784 neurons (28x28 pixel images).
-2. **Hidden Layer:** Where the "learning" happens.
-3. **Output Layer:** 10 neurons representing digits 0 through 9.
+### 1. The Input: Image Flattening
+Computers don't see "shapes" initially; they see a grid of numbers. 
+* **The Image:** A $28 \times 28$ pixel grayscale image.
+* **The Process:** To make the math work, we "flatten" the grid into a single **784-length vector** ($28 \times 28 = 784$).
+* **The Data:** Each box in that column represents the brightness of one specific pixel.
+
+### 2. The Hidden Layer: Feature Detection
+The middle layer consists of **128 neurons**. This is the "engine room" of the network.
+* **Weights (The Colored Lines):** Every pixel is connected to every neuron. The lines represent "Weights"—the network's way of deciding which pixels are important for which digit.
+* **ReLU Activation:** The "L-shape" symbol inside the circles represents **ReLU** ($f(x) = \max(0, x)$). It acts as a gate, allowing only the most important signals to pass through.
+
+
+
+### 3. The Output Layer: The Final Verdict
+The final layer has **10 neurons**, representing the possibilities: **0 through 9**.
+* **Sigmoid/Softmax:** The "S-curve" symbol represents a mathematical function that squashes the incoming signals into a **probability** between 0 and 1.
+* **The Prediction:** In the example above, the neuron for **"3"** would have the highest value (e.g., 0.98), telling us the AI is 98% sure it sees a three.
+
+
+
+---
+
+### Why is this important?
+While modern AI uses more complex "Convolutional" layers to keep track of spatial patterns, this architecture is the foundation of all deep learning. It shows how we turn raw data into a logical decision using nothing but math and layers!
