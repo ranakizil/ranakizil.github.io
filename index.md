@@ -3,8 +3,6 @@ layout: default
 title: Home
 ---
 
-# hello, welcome to my blog.
-
 ### Recent Posts
 <ul>
   {% for post in site.posts %}
