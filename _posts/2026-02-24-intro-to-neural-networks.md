@@ -6,7 +6,7 @@ date: 2026-02-24
 
 # How a Neural Network "Sees" a Digit 🧠🔢
 
-![Neural Network Architecture](mnist.png)
+![Neural Network Architecture](_posts/mnist.png)
 
 This diagram illustrates a **Feedforward Neural Network** (specifically a Multi-Layer Perceptron) performing one of the most famous tasks in AI: recognizing handwritten digits.
 
