@@ -1,0 +1,27 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* ---------------------------- */
+/* Your overrides go BELOW this */
+/* ---------------------------- */
+
+/* Site title */
+header h1 a {
+  color: #222222 !important;
+}
+
+/* Subtitle */
+header p {
+  color: #555555;
+}
+
+/* Links */
+a {
+  color: #333333;
+}
+
+a:hover {
+  color: #666666;
+}
