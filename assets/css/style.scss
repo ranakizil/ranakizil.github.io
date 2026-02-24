@@ -2,35 +2,24 @@
 ---
 @import "{{ site.theme }}";
 
-/* Use a clean, professional serif font like the image you showed */
+/* This removes the sidebar/header clutter entirely */
+.sidebar, header ul, .downloads { display: none !important; }
+
+/* This creates the 'Colah' narrow column look */
 body {
-  font-family: "Georgia", "Times New Roman", serif;
-  color: #333;
-  line-height: 1.6;
-  background-color: #fafafa;
-}
-
-/* Make the links dark and subtle instead of bright blue */
-a {
-  color: #2a7ae2;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: #111;
-}
-
-/* Clean up the titles */
-h1, h2, h3 {
-  color: #111;
-  font-weight: 400;
-  margin-top: 1.5em;
-}
-
-/* This centers your content and gives it "breathing room" */
-.wrapper {
-  max-width: 800px;
+  max-width: 750px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 50px 20px;
+  font-family: "Charter", "Georgia", serif; /* Professional Serif */
+  background: white;
+  color: #222;
+}
+
+/* Make your blog title a tiny, subtle grey link at the very top */
+header h1 {
+  font-size: 14px !important;
+  font-weight: normal;
+  text-transform: lowercase;
+  color: #999 !important;
+  margin-bottom: 50px;
 }
