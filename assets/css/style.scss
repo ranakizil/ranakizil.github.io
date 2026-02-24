@@ -4,24 +4,32 @@
 @import "{{ site.theme }}";
 
 /* ---------------------------- */
-/* Your overrides go BELOW this */
+/* Override minimal theme colors */
 /* ---------------------------- */
 
-/* Site title */
-header h1 a {
-  color: #222222 !important;
+/* Site title (home page + posts) */
+header h1 a,
+.post header h1 a {
+  color: #4B5563 !important; /* lighter gray for main titles */
 }
 
-/* Subtitle */
-header p {
-  color: #555555;
+/* Subtitle / description */
+header p,
+.post header p {
+  color: #6B7280; /* medium gray for subtitle/description */
 }
 
 /* Links */
 a {
-  color: #333333;
+  color: #2563EB; /* keep subtle blue links if you like, or change to gray */
 }
 
+/* Hover for links */
 a:hover {
-  color: #666666;
+  color: #1D4ED8; /* slightly darker blue or #374151 for gray */
+}
+
+/* Optional: remove default post title link blue */
+.post h1 a {
+  color: #4B5563 !important; /* ensures posts also have lighter gray */
 }
