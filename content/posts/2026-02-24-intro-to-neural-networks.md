@@ -6,7 +6,7 @@ math: true
 ---
 
 ### What is MNIST database?
-MNSIT stands for **Modified National Institute of Standards and Technology**. It is a large collection of handwritten digits that has been the standard benchmark for training image processing systems since the late 1990s. Every image in the MNIST data set has exactly *28 x 28* pixels.
+MNSIT stands for **Modified National Institute of Standards and Technology**. It is a large collection of handwritten digits that has been the standard benchmark for training image processing systems since the late 1990s. Every image in the MNIST data set has exactly $28 \times 28$ pixels.
 
 ### Sample images from the dataset:
 
@@ -20,7 +20,7 @@ Now we are going to see how can we create a neural network to identify the given
 ### 1. The Input: Image Preprocessing
 The process starts on the far left with a small, 28x28 pixel grayscale image of the digit "3". At this point, the neural network doesn’t actually "know" it’s looking at a number; it just sees a grid of tiny squares.
 
-Each of these **784 pixels** (28x28 = 784) has a value based on how bright it is, ranging from 0 to 1. A 0 means the pixel is pure black (the background), while a 1 means it is pure white (the ink of the pen). If a pixel is somewhere in between, like 0.9, it is a light gray.
+Each of these **784 pixels** ($28 \times 28$ = 784) has a value based on how bright it is, ranging from 0 to 1. A 0 means the pixel is pure black (the background), while a 1 means it is pure white (the ink of the pen). If a pixel is somewhere in between, like 0.9, it is a light gray.
 
 To help the network understand this, we use a step called **preprocessing**. In this case, we "flatten" the image. Imagine taking each row of the grid and laying them out in one long, straight line, starting from the top-left and ending at the bottom-right.
 
@@ -41,7 +41,7 @@ In the "Hidden Layer" we use the **ReLu (The Rectified Linear Unit)** activation
 ![relu](/relu.png)
 <img src="/relu.png" alt="relu" style="width: 80%;">
 
-$$f(z) = \max(0, z)$$
+$$ReLU(z) = \max(0, z)$$
 
 The most popular choice today. If the input is negative, it turns it into 0 (the neuron stays silent). If it’s positive, it passes the value through exactly as it is. It’s fast and helps the network learn complex patterns.
 
@@ -58,4 +58,16 @@ The Sigmoid activation function is shown inside the final 10 output neurons. It�
 ![sigmoid](/sigmoid.png)
 <img src="/sigmoid.png" alt="sigmoid" style="width: 80%;">
 
-$$$\sigma$(z) = \frac{1}{1 + e^{-z}}$$
+$\sigma$(z) = $$\frac{1}{1 + e^{-z}}$$
+
+---
+### Downsides of this network
+
+- This network treats a 2D image like a 1D array. So, we don't know which pixels were next to each other. We lose information after flattining the image, in other words we no longer have **spatial awareness**.
+
+- It requires billions of connections for a high-quality photo, which would crash a computer. Notice that this image has only $28 \times 28$ pixels and even this has too many connections.
+
+### Solution
+
+We use Convolutional Neural Networks (CNNs) to overcome these problems. You can check my post for this. 
+
