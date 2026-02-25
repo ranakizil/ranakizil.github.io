@@ -1,7 +1,8 @@
 ---
 title: "Home"
+type: "docs"
 ---
 
-# All Posts
+# My Posts
 
-{{< list-posts >}}
+{{< section >}}
