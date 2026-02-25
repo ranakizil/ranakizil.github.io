@@ -3,4 +3,14 @@ languageCode = 'en-us'
 title = "rana's blog"
 theme = 'hugo-book'
 
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 10
+
+[[menu.main]]
+  name = "Posts"
+  url = "/posts/"
+  weight = 20
+
 
