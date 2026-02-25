@@ -38,6 +38,7 @@ In the "Hidden Layer" we use the **ReLu (The Rectified Linear Unit)** activation
 
 **ReLu (The Rectified Linear Unit)**
 
+![relu](/relu.png)
 <img src="/relu.png" alt="relu" style="width: 80%;">
 
 $$f(z) = \max(0, z)$$
@@ -54,4 +55,5 @@ The far right column contains 10 neurons, labeled 0 through 9. In classification
 
 The curves inside these circles look like an "S". This is the Sigmoid (or more likely Softmax) activation function.
 
+![sigmoid](/sigmoid.png)
 <img src="/sigmoid.png" alt="sigmoid" style="width: 80%;">
