@@ -58,4 +58,4 @@ The Sigmoid activation function is shown inside the final 10 output neurons. Itâ
 ![sigmoid](/sigmoid.png)
 <img src="/sigmoid.png" alt="sigmoid" style="width: 80%;">
 
-$$\sigma$(z) = \frac{1}{1 + e^{-z}}$$
+$$$\sigma$(z) = \frac{1}{1 + e^{-z}}$$
