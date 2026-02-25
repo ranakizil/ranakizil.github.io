@@ -1,6 +1,7 @@
 ---
-title: "Welcome"
+title: "Home"
 ---
-# Welcome to my blog!
 
-Check out my [latest posts](/posts).
+# All Posts
+
+{{< list-posts >}}
