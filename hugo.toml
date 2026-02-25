@@ -4,10 +4,16 @@ title = "rana's blog"
 theme = 'hugo-book'
 
 [params]
+  # The name that appears at the top
   BookTitle = "rana's blog"
-  # This makes the content take up more space
-  BookSectionEnumerable = true
-  # This moves the menu to the top on mobile, but for desktop we 
-  # can toggle the 'Table of Contents' to the left or right
-  BookToC = true
+  
+  # Clean ChatGPT look: No search, no right-side table of contents
+  BookSearch = false
+  BookToC = false
+  BookTheme = 'light'
+
+  # Important: Points Hugo to your custom styles
   customCSS = ["css/custom.css"]
+
+  # Optional: Links for your sidebar
+  BookRepo = 'https://github.com/ranakizil/ranakizil.github.io'
