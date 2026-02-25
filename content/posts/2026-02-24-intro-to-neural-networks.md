@@ -38,13 +38,20 @@ In the "Hidden Layer" we use the **ReLu (The Rectified Linear Unit)** activation
 
 **ReLu (The Rectified Linear Unit)**
 
-![relu](/relu.png)
-
+<img src="/relu.png" alt="relu" style="width: 80%;">
 
 $$f(z) = \max(0, z)$$
-
 
 The most popular choice today. If the input is negative, it turns it into 0 (the neuron stays silent). If it’s positive, it passes the value through exactly as it is. It’s fast and helps the network learn complex patterns.
 
 
-### 3. The Output Layer: Making a Guess
+### 3. The Output Layer: Classification
+
+The far right column contains 10 neurons, labeled 0 through 9. In classification tasks, the number of output neurons corresponds to the number of possible categories. Since there are ten digits (0-9), we need ten outputs.
+
+
+**Sigmoid/Softmax**
+
+The curves inside these circles look like an "S". This is the Sigmoid (or more likely Softmax) activation function.
+
+<img src="/sigmoid.png" alt="sigmoid" style="width: 80%;">
