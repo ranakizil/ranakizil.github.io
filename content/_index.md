@@ -1,8 +1,7 @@
 ---
 title: "Home"
-type: "docs"
+type: "posts"
+layout: "list"
 ---
 
-# My Posts
-
-{{< section >}}
+# My Latest Writing
