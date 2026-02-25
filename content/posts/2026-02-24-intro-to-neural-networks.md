@@ -14,7 +14,7 @@ MNSIT stands for **Modified National Institute of Standards and Technology**. It
 ---
 Now we are going to see how can we create a neural network to identify the given handwritten digit.
 
-![Neural Network Architecture](/images/mnist.png)
+![MNIST](/mnist.png)
 
 ### 1. The Input: Image Preprocessing
 The process starts on the far left with a small, 28x28 pixel grayscale image of the digit "3". At this point, the neural network doesn’t actually "know" it’s looking at a number; it just sees a grid of tiny squares.
