@@ -12,7 +12,7 @@ theme = 'hugo-book'
   BookMenuBundle = '/menu'
 
   # Adds a search bar to the sidebar
-  BookSearch = true
+  BookSearch = false
 
   # If you want a dark mode toggle
   BookTheme = 'light' # Options: 'light', 'dark', 'auto'
