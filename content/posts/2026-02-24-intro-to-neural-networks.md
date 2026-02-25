@@ -9,7 +9,7 @@ MNSIT stands for **Modified National Institute of Standards and Technology**. It
 
 ### Sample images from the dataset:
 
-![](/images/mnist_examples.png)
+![](/mnist_samples.png)
 
 ---
 Now we are going to see how can we create a neural network to identify the given handwritten digit.
