@@ -58,7 +58,7 @@ The Sigmoid activation function is shown inside the final 10 output neurons. Itâ
 ![sigmoid](/sigmoid.png)
 <img src="/sigmoid.png" alt="sigmoid" style="width: 80%;">
 
-$\sigma$(z) = $$\frac{1}{1 + e^{-z}}$$
+$$\sigma(z) = \frac{1}{1 + e^{-z}}$$
 
 ---
 ### Downsides of this network
@@ -69,5 +69,5 @@ $\sigma$(z) = $$\frac{1}{1 + e^{-z}}$$
 
 ### Solution
 
-We use Convolutional Neural Networks (CNNs) to overcome these problems. You can check my post for this. 
+We use Convolutional Neural Networks (CNNs) to overcome these problems. You can check my post on this. 
 
