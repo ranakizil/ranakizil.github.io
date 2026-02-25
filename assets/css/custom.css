@@ -1,0 +1,20 @@
+/* Move Blog Name to the top center/left */
+.book-header {
+    display: flex;
+    justify-content: flex-start;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+
+/* Shift main content to the far left */
+.book-page {
+    margin-left: 0 !important;
+    max-width: 800px; /* Keeps it readable like ChatGPT */
+}
+
+/* Hide the empty left sidebar if it's still there */
+.book-menu {
+    display: none;
+}

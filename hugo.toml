@@ -4,19 +4,10 @@ title = "rana's blog"
 theme = 'hugo-book'
 
 [params]
-  # (Optional) Set the title that appears in the sidebar/header
-  BookTitle = "My Blog"
-  
-  # This theme defaults to a clean white look
-  # Changing this to /menu tells Hugo to look for 'content/menu/index.md'
-  BookMenuBundle = '/menu'
-
-  # Adds a search bar to the sidebar
-  BookSearch = false
-
-  # If you want a dark mode toggle
-  BookTheme = 'light' # Options: 'light', 'dark', 'auto'
-
-  # (Optional) Github link for "Edit this page" feature
-  BookRepo = 'https://github.com/ranakizil/ranakizil.github.io'
-  BookEditPath = 'edit/main/content'
+  BookTitle = "rana's blog"
+  # This makes the content take up more space
+  BookSectionEnumerable = true
+  # This moves the menu to the top on mobile, but for desktop we 
+  # can toggle the 'Table of Contents' to the left or right
+  BookToC = true
+  customCSS = ["css/custom.css"]
