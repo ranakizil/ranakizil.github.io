@@ -1,6 +1,6 @@
 baseURL = 'https://ranakizil.github.io/'
 languageCode = 'en-us'
-title = 'rana's blog'
+title = 'rana''s blog'
 theme = 'ananke'
 
 
