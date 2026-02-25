@@ -1,9 +1,9 @@
 baseURL = 'https://ranakizil.github.io/'
 languageCode = 'en-us'
-title = "Rana's Blog"
-theme = 'hugo-book'  # Change this from 'ananke'
+title = "rana's blog"
+theme = 'hugo-book'
 
 [params]
   # This theme defaults to a clean white look
   BookMenuBundle = /menu
-  BookRepo = "https://github.com/ranakizil/ranakizil.github.io"
+
