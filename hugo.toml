@@ -11,4 +11,4 @@ disableKinds = ["taxonomy", "term"]
   BookSearch = false
   BookToC = false
   BookTheme = 'light'
-  BookCustomCSS = ["custom.scss"]
+  BookCustomCSS = ["custom.css"]
