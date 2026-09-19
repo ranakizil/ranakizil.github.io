@@ -1,58 +1,34 @@
 <style>
-  /* 1. Force the main wrapper layout from side-by-side row to single column */
+  /* 1. Hide both sidebars completely */
+  aside.book-menu,
+  .book-menu,
+  aside.book-toc,
+  .book-toc {
+    display: none !important;
+  }
+
+  /* 2. Center and widen the main post column */
   .book-page,
-  .book-container,
   main.book-page,
-  div.book-page {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    max-width: 900px !important;
+  div.book-page,
+  .book-posts {
+    max-width: 800px !important;
     width: 100% !important;
     margin: 0 auto !important;
     padding: 2rem 1.5rem !important;
     float: none !important;
   }
 
-  /* 2. Position 'rana's blog' header on top spanning the full width */
-  .book-menu,
-  aside.book-menu,
-  .book-header {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    position: static !important;
-    margin-bottom: 2rem !important;
-    padding-bottom: 1rem !important;
-    border-bottom: 1px solid #eaeaea !important;
-    background: transparent !important;
-  }
-
-  /* Hide menu links inside the header */
-  .book-menu nav > ul {
-    display: none !important;
-  }
-
-  /* Make header title text large */
-  .book-brand,
-  .book-menu a {
-    font-size: 1.8rem !important;
-    font-weight: 700 !important;
-    color: #111 !important;
-  }
-
-  /* 3. Make main post list take up 100% width under the header */
-  .book-posts,
-  .markdown,
-  article {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-  }
-
-  /* 4. Hide right sidebar / categories / tags completely */
-  .book-toc,
-  aside.book-toc {
-    display: none !important;
+  /* 3. Add 'rana's blog' directly at the top of the main container */
+  .book-posts::before,
+  main.book-page::before {
+    content: "rana's blog";
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eaeaea;
   }
 </style>
