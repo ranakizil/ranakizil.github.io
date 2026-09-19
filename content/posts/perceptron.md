@@ -1,12 +1,10 @@
 
 ---
-title: "Upgrading to Convolutional Neural Networks (CNNs)"
+title: "Understanding the Perceptron: The Building Block of Neural Networks"
 date: 2026-09-19
 draft: false
 math: true
 ---
-
-# Understanding the Perceptron: The Building Block of Neural Networks
 
 The **perceptron** is one of the simplest artificial neural network architectures, introduced by Frank Rosenblatt in 1958. It acts as a fundamental building block for modern deep learning.
 
