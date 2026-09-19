@@ -1,6 +1,6 @@
 ---
-title: "Home"
-type: "posts"
-layout: "list"
+title: "rana's blog"
+layout: "index"
 ---
+
 {{< custom-grid >}}
