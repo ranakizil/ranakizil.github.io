@@ -7,7 +7,12 @@
   
   {{ partial "docs/html-head" . }}
 
-  <!-- 1. MathJax Configuration & Script -->
+  <!-- 1. Import Editorial Serif Fonts (Newsreader) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- 2. MathJax Script -->
   <script>
     MathJax = {
       tex: {
@@ -22,38 +27,96 @@
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-  <!-- 2. Clean Single-Column Layout CSS -->
+  <!-- 3. Classy Stylesheet -->
   <style>
+    :root {
+      --bg-color: #fcfcfc;
+      --text-color: #242424;
+      --muted-color: #6b6b6b;
+      --accent-color: #1a1a1a;
+      --border-color: #e5e5e5;
+    }
+
     body {
-      background-color: #ffffff;
-      color: #111111;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       margin: 0;
       padding: 0;
+      -webkit-font-smoothing: antialiased;
     }
 
     .site-wrapper {
-      max-width: 800px;
+      max-width: 720px;
       margin: 0 auto;
-      padding: 2rem 1.5rem;
+      padding: 3rem 1.5rem;
     }
 
+    /* Classy Header */
     .site-header {
-      margin-bottom: 2.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #eaeaea;
+      margin-bottom: 3.5rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
     }
 
     .site-header a {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #111111;
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 2.1rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--accent-color);
       text-decoration: none;
+      transition: opacity 0.2s ease;
     }
 
-    /* MathJax rendering font scaling */
+    .site-header a:hover {
+      opacity: 0.7;
+    }
+
+    /* Article Titles & Post Feed Styling */
+    .site-content h1, 
+    .site-content h2, 
+    .site-content .book-post-title {
+      font-family: 'Newsreader', Georgia, serif;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    .site-content a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .site-content a:hover {
+      color: #000;
+      text-decoration: underline;
+    }
+
+    /* Paragraph Body Reading Experience */
+    .site-content p, 
+    .markdown p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #2b2b2b;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Metadata / Dates */
+    .book-post-meta,
+    time {
+      font-size: 0.875rem;
+      color: var(--muted-color);
+      font-weight: 400;
+    }
+
+    /* Math Formula Display Enhancements */
     .mjx-chtml {
-      font-size: 105% !important;
+      font-size: 110% !important;
+      color: #111;
     }
   </style>
 </head>
