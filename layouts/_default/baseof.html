@@ -1,18 +1,32 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en" }}" dir="{{ .Site.Language.LanguageDirection | default "ltr" }}">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
   
   {{ partial "docs/html-head" . }}
-  {{ partial "docs/inject/head" . }}
 
+  <!-- 1. MathJax Configuration & Script -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- 2. Clean Single-Column Layout CSS -->
   <style>
-    /* Clean 1-Column Layout Overrides */
     body {
-      background-color: #fff;
-      color: #111;
+      background-color: #ffffff;
+      color: #111111;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       margin: 0;
       padding: 0;
@@ -33,11 +47,11 @@
     .site-header a {
       font-size: 2.2rem;
       font-weight: 700;
-      color: #111;
+      color: #111111;
       text-decoration: none;
     }
 
-    /* MathJax Display Fixes */
+    /* MathJax rendering font scaling */
     .mjx-chtml {
       font-size: 105% !important;
     }
@@ -54,7 +68,5 @@
       {{ block "main" . }}{{ end }}
     </main>
   </div>
-
-  {{ partial "docs/inject/body" . }}
 </body>
 </html>
