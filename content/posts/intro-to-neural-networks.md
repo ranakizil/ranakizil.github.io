@@ -3,6 +3,7 @@ layout: post
 title: "An Introduction to Neural Networks with MNIST"
 date: 2026-02-24
 math: true
+categories: ["Neural Networks and Deep Learning"]
 ---
 
 ### What is MNIST database?
