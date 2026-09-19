@@ -1,0 +1,44 @@
+{{ define "main" }}
+  <main class="container" style="max-width: 800px; margin: 0 auto; padding: 2rem 1rem;">
+    
+    <!-- Title or introduction from _index.md -->
+    {{ .Content }}
+
+    <!-- Define the topic sections -->
+    {{ $desired_categories := slice "Neural Networks and Deep Learning" "Advanced Deep Learning" }}
+
+    {{ range $desired_categories }}
+      {{ $category := . }}
+      {{ $pages := where $.Site.RegularPages "Params.categories" "intersect" (slice $category) }}
+      
+      {{ if gt (len $pages) 0 }}
+        <section class="category-section" style="margin-bottom: 3rem;">
+          
+          <h1 style="color: #6b21a8; font-size: 1.8rem; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
+            {{ $category }}
+          </h1>
+
+          <div class="posts-list">
+            {{ range $pages }}
+              <article class="post-card" style="margin-bottom: 2rem;">
+                <h2 style="font-size: 1.3rem; margin-bottom: 0.25rem;">
+                  <a href="{{ .RelPermalink }}" style="color: #6b21a8; text-decoration: none;">
+                    {{ .Title }}
+                  </a>
+                </h2>
+                <p style="color: #6b7280; font-size: 0.875rem; margin-top: 0; margin-bottom: 0.5rem;">
+                  📅 {{ .Date.Format "January 2, 2006" }}
+                </p>
+                <p style="color: #374151; line-height: 1.6;">
+                  {{ .Summary }}
+                </p>
+              </article>
+            {{ end }}
+          </div>
+
+        </section>
+      {{ end }}
+    {{ end }}
+
+  </main>
+{{ end }}
