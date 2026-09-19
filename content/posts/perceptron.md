@@ -9,7 +9,7 @@ The **perceptron** is one of the simplest artificial neural network architecture
 
 At its core, a perceptron takes multiple binary or real-valued inputs, combines them using weights and a bias, and passes the result through an activation function to produce a single output.
 
-![Perceptron Diagram](/static/perceptron.png)
+![Perceptron Diagram](/perceptron.png)
 
 
 ## How a Perceptron Works
