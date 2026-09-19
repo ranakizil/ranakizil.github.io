@@ -3,8 +3,6 @@ languageCode = 'en-us'
 title = "rana's blog"
 theme = 'hugo-book'
 
-disableKinds = ["taxonomy", "term"]
-
 [params]
   BookTitle = "rana's blog"
   BookSearch = false
