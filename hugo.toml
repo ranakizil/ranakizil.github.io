@@ -4,6 +4,9 @@ title = "rana's blog"
 theme = 'hugo-book'
 
 [params]
+  # Disable Categories and Tags widgets completely
+  disableKinds = ["taxonomy", "term"]
+  
   # The name that appears at the top
   BookTitle = "rana's blog"
   
