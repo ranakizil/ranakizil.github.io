@@ -1,0 +1,50 @@
+/* Reset & Center Hugo Book Layout */
+.book-page,
+.book-layout,
+.book-posts,
+main,
+article,
+.markdown {
+  max-width: 720px !important;
+  margin: 0 auto !important;
+  padding: 2rem 1rem !important;
+  float: none !important;
+}
+
+/* Hide empty theme navigation sidebars */
+.book-menu,
+aside.book-toc,
+.book-toc-content {
+  display: none !important;
+}
+
+/* Header & Title Alignment */
+.book-header {
+  max-width: 720px !important;
+  margin: 0 auto !important;
+  padding: 1.5rem 1rem 0 1rem !important;
+  border-bottom: none !important;
+}
+
+/* Typography */
+body, p, .markdown p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 1.05rem !important;
+  line-height: 1.75 !important;
+  color: #24292e !important;
+}
+
+/* Links & Titles */
+a {
+  color: #111111 !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  text-decoration: underline !important;
+}
+
+h1, h2, h3 {
+  color: #111111 !important;
+  font-weight: 600 !important;
+}
