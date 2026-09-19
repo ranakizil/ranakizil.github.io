@@ -1,1 +1,6 @@
-
+{{ define "main" }}
+<article class="markdown book-post">
+  <!-- 1. Render content from _index.md (which runs your shortcode) -->
+  {{ .Content }}
+</article>
+{{ end }}
