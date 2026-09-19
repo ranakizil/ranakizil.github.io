@@ -1,25 +1,36 @@
-/* 1. Hide Categories & Tags sidebar on the right */
-.sidebar, 
-.widget-categories, 
-.widget-tags,
-aside {
+/* 1. Hide the right-side layout column (Categories/Tags) */
+.book-toc,
+.book-toc-content,
+aside.book-toc {
   display: none !important;
 }
 
-/* 2. Make post list take up full width */
-.main, .content, .container {
+/* 2. Expand the main post content area to fill full width */
+.book-page,
+.book-posts,
+main.book-page {
   max-width: 100% !important;
   width: 100% !important;
+  padding-right: 0 !important;
 }
 
-/* 3. Move 'rana's blog' header above the posts */
-body, .layout-container {
-  display: flex !important;
-  flex-direction: column !important;
+/* 3. Move 'rana's blog' to the top header instead of the sidebar layout */
+.book-menu {
+  display: none !important; /* Hides left sidebar frame if needed */
 }
 
-.site-title, .header, header {
+/* Force container layout to display vertically (header on top, content below) */
+.book-header {
+  display: block !important;
   width: 100% !important;
-  text-align: left !important;
   margin-bottom: 2rem !important;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 1rem;
+}
+
+.book-header h1,
+.book-header .book-brand {
+  font-size: 2rem !important;
+  font-weight: bold !important;
+  color: #000 !important;
 }
