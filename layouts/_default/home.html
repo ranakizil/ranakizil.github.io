@@ -1,80 +1,114 @@
 {{ define "main" }}
-<main class="container" style="max-width: 800px; margin: 0 auto; padding: 2rem 1rem;">
+<div class="distill-container">
+  
+  <!-- List all your category titles in the exact order you want them on the page -->
+  {{ $categories := slice "Recent Exciting Things!" "Neural Networks (General)" "Recurrent Neural Networks" "Convolutional Neural Networks" }}
 
-  {{/* Render any introductory content written inside content/_index.md */}}
-  {{ if .Content }}
-    <div class="homepage-content" style="margin-bottom: 2.5rem; color: #374151; line-height: 1.6;">
-      {{ .Content }}
-    </div>
-  {{ end }}
-
-  {{/* 1. Explicitly defined categories in your preferred display order */}}
-  {{ $desired_categories := slice "Neural Networks and Deep Learning" "Advanced Deep Learning" "Multi-Agent Systems" }}
-
-  {{ range $desired_categories }}
-    {{ $category_name := . }}
-    {{/* Find posts that belong to the current category */}}
-    {{ $pages := where $.Site.RegularPages "Params.categories" "intersect" (slice $category_name) }}
-
+  {{ range $categories }}
+    {{ $category := . }}
+    {{ $pages := where $.Site.RegularPages "Params.categories" "intersect" (slice $category) }}
+    
     {{ if gt (len $pages) 0 }}
-      <section class="category-group" style="margin-bottom: 3.5rem;">
+      <section class="category-section">
+        <!-- 1. CATEGORY TITLE -->
+        <h2 class="category-title">{{ $category }}</h2>
         
-        <!-- Category Title Header -->
-        <h1 style="color: #6b21a8; font-size: 1.8rem; font-weight: 700; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
-          {{ $category_name }}
-        </h1>
-
-        <!-- Posts under this category -->
-        <div class="posts-list">
+        <!-- 2. GRID OF POST CARDS WITH IMAGES -->
+        <div class="card-grid">
           {{ range $pages }}
-            <article class="post-card" style="margin-bottom: 2rem;">
-              <h2 style="font-size: 1.35rem; font-weight: 600; margin-bottom: 0.35rem;">
-                <a href="{{ .RelPermalink }}" style="color: #6b21a8; text-decoration: none;">
-                  {{ .Title }}
-                </a>
-              </h2>
-              
-              <p style="color: #6b7280; font-size: 0.875rem; margin-top: 0; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.4rem;">
-                <span>📅</span> <span>{{ .Date.Format "January 2, 2006" }}</span>
-              </p>
-
-              <p style="color: #374151; line-height: 1.6; margin: 0;">
-                {{ .Summary }}
-              </p>
-            </article>
+            <a href="{{ .RelPermalink }}" class="distill-card">
+              <div class="card-image-wrapper">
+                {{ if .Params.image }}
+                  <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy" />
+                {{ else }}
+                  <div class="placeholder-img"></div>
+                {{ end }}
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">{{ .Title }}</h3>
+              </div>
+            </a>
           {{ end }}
         </div>
-
       </section>
     {{ end }}
   {{ end }}
 
-  {{/* 2. Catch-all loop for uncategorized posts or posts with new category names */}}
-  {{ $uncategorized := where $.Site.RegularPages "Params.categories" "==" nil }}
-  {{ if gt (len $uncategorized) 0 }}
-    <section class="category-group" style="margin-bottom: 3.5rem;">
-      <h1 style="color: #6b21a8; font-size: 1.8rem; font-weight: 700; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
-        Other Posts
-      </h1>
-      <div class="posts-list">
-        {{ range $uncategorized }}
-          <article class="post-card" style="margin-bottom: 2rem;">
-            <h2 style="font-size: 1.35rem; font-weight: 600; margin-bottom: 0.35rem;">
-              <a href="{{ .RelPermalink }}" style="color: #6b21a8; text-decoration: none;">
-                {{ .Title }}
-              </a>
-            </h2>
-            <p style="color: #6b7280; font-size: 0.875rem; margin-top: 0; margin-bottom: 0.75rem;">
-              📅 {{ .Date.Format "January 2, 2006" }}
-            </p>
-            <p style="color: #374151; line-height: 1.6; margin: 0;">
-              {{ .Summary }}
-            </p>
-          </article>
-        {{ end }}
-      </div>
-    </section>
-  {{ end }}
+</div>
 
-</main>
+<style>
+  .distill-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: Georgia, serif;
+  }
+
+  .category-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .category-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.25rem;
+  }
+
+  /* Grid layout for cards */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  /* Card styling with black border */
+  .distill-card {
+    display: flex;
+    flex-direction: column;
+    border: 1.5px solid #000;
+    background: #fff;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .distill-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .card-image-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-bottom: 1.5px solid #000;
+    background-color: #f9fafb;
+  }
+
+  .card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-body {
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+  }
+
+  .card-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+    color: #111827;
+  }
+</style>
 {{ end }}
