@@ -1,3 +1,44 @@
-{{ if .Params.math }}
-  {{ partial "mathjax.html" . }}
-{{ end }}
+<style>
+  /* 1. Collapse the Hugo Book grid system into a single centered column */
+  .book-grid {
+    grid-template-columns: 0 1fr 0 !important;
+    max-width: 800px !important;
+    margin: 0 auto !important;
+    padding: 0 1.5rem !important;
+  }
+
+  /* 2. Style 'rana's blog' as a clean top header above the posts */
+  aside.book-menu, 
+  .book-menu {
+    grid-column: 2 / 3 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    position: static !important;
+    padding: 2rem 0 1rem 0 !important;
+    border-bottom: 1px solid #eaeaea !important;
+    background: transparent !important;
+  }
+
+  /* Hide navigation links inside the top header */
+  .book-menu nav > ul {
+    display: none !important;
+  }
+
+  /* 3. Force main content to fill the center column */
+  main.book-page, 
+  .book-posts, 
+  .markdown {
+    grid-column: 2 / 3 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 2rem 0 !important;
+  }
+
+  /* 4. Completely remove the right-side table of contents/sidebar */
+  aside.book-toc, 
+  .book-toc {
+    display: none !important;
+  }
+</style>
