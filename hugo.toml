@@ -12,3 +12,4 @@ disableKinds = ["taxonomy", "term"]
   BookToC = false
   BookTheme = 'light'
   BookCustomCSS = ["custom.css"]
+  math = true
