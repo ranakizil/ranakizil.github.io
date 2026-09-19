@@ -3,7 +3,6 @@ languageCode = 'en-us'
 title = "rana's blog"
 theme = 'hugo-book'
 
-# Disable Categories and Tags pages/widgets completely
 disableKinds = ["taxonomy", "term"]
 
 [params]
@@ -11,12 +10,12 @@ disableKinds = ["taxonomy", "term"]
   BookSearch = false
   BookToC = false
   BookTheme = 'light'
-  BookCustomCSS = ["custom.css"]
   math = true
 
-# Enable raw LaTeX passthrough for Goldmark parser
 [markup]
   [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
     [markup.goldmark.extensions]
       [markup.goldmark.extensions.passthrough]
         enable = true
