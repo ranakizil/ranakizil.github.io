@@ -1,9 +1,8 @@
 ---
 title: "Understanding the Perceptron: The Building Block of Neural Networks"
 date: 2026-09-19
-draft: false
-math: true
-categories: ["Neural Networks and Deep Learning"]
+categories: ["Neural Networks (General)"]
+image: "/perceptron_diagram.png"
 ---
 
 The **perceptron** is one of the simplest artificial neural network architectures. It acts as a fundamental building block for modern deep learning.
