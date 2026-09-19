@@ -3,6 +3,7 @@ layout: post
 title: "A Solution to the XOR Problem: Perceptron to Neuron"
 date: 2026-02-24
 math: true
+categories: ["Neural Networks and Deep Learning"]
 ---
 
 ### 1. The "XOR Problem"
