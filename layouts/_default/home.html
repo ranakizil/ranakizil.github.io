@@ -1,44 +1,80 @@
 {{ define "main" }}
-  <main class="container" style="max-width: 800px; margin: 0 auto; padding: 2rem 1rem;">
-    
-    <!-- Title or introduction from _index.md -->
-    {{ .Content }}
+<main class="container" style="max-width: 800px; margin: 0 auto; padding: 2rem 1rem;">
 
-    <!-- Define the topic sections -->
-    {{ $desired_categories := slice "Neural Networks and Deep Learning" "Advanced Deep Learning" }}
+  {{/* Render any introductory content written inside content/_index.md */}}
+  {{ if .Content }}
+    <div class="homepage-content" style="margin-bottom: 2.5rem; color: #374151; line-height: 1.6;">
+      {{ .Content }}
+    </div>
+  {{ end }}
 
-    {{ range $desired_categories }}
-      {{ $category := . }}
-      {{ $pages := where $.Site.RegularPages "Params.categories" "intersect" (slice $category) }}
-      
-      {{ if gt (len $pages) 0 }}
-        <section class="category-section" style="margin-bottom: 3rem;">
-          
-          <h1 style="color: #6b21a8; font-size: 1.8rem; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
-            {{ $category }}
-          </h1>
+  {{/* 1. Explicitly defined categories in your preferred display order */}}
+  {{ $desired_categories := slice "Neural Networks and Deep Learning" "Advanced Deep Learning" "Multi-Agent Systems" }}
 
-          <div class="posts-list">
-            {{ range $pages }}
-              <article class="post-card" style="margin-bottom: 2rem;">
-                <h2 style="font-size: 1.3rem; margin-bottom: 0.25rem;">
-                  <a href="{{ .RelPermalink }}" style="color: #6b21a8; text-decoration: none;">
-                    {{ .Title }}
-                  </a>
-                </h2>
-                <p style="color: #6b7280; font-size: 0.875rem; margin-top: 0; margin-bottom: 0.5rem;">
-                  📅 {{ .Date.Format "January 2, 2006" }}
-                </p>
-                <p style="color: #374151; line-height: 1.6;">
-                  {{ .Summary }}
-                </p>
-              </article>
-            {{ end }}
-          </div>
+  {{ range $desired_categories }}
+    {{ $category_name := . }}
+    {{/* Find posts that belong to the current category */}}
+    {{ $pages := where $.Site.RegularPages "Params.categories" "intersect" (slice $category_name) }}
 
-        </section>
-      {{ end }}
+    {{ if gt (len $pages) 0 }}
+      <section class="category-group" style="margin-bottom: 3.5rem;">
+        
+        <!-- Category Title Header -->
+        <h1 style="color: #6b21a8; font-size: 1.8rem; font-weight: 700; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
+          {{ $category_name }}
+        </h1>
+
+        <!-- Posts under this category -->
+        <div class="posts-list">
+          {{ range $pages }}
+            <article class="post-card" style="margin-bottom: 2rem;">
+              <h2 style="font-size: 1.35rem; font-weight: 600; margin-bottom: 0.35rem;">
+                <a href="{{ .RelPermalink }}" style="color: #6b21a8; text-decoration: none;">
+                  {{ .Title }}
+                </a>
+              </h2>
+              
+              <p style="color: #6b7280; font-size: 0.875rem; margin-top: 0; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.4rem;">
+                <span>📅</span> <span>{{ .Date.Format "January 2, 2006" }}</span>
+              </p>
+
+              <p style="color: #374151; line-height: 1.6; margin: 0;">
+                {{ .Summary }}
+              </p>
+            </article>
+          {{ end }}
+        </div>
+
+      </section>
     {{ end }}
+  {{ end }}
 
-  </main>
+  {{/* 2. Catch-all loop for uncategorized posts or posts with new category names */}}
+  {{ $uncategorized := where $.Site.RegularPages "Params.categories" "==" nil }}
+  {{ if gt (len $uncategorized) 0 }}
+    <section class="category-group" style="margin-bottom: 3.5rem;">
+      <h1 style="color: #6b21a8; font-size: 1.8rem; font-weight: 700; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
+        Other Posts
+      </h1>
+      <div class="posts-list">
+        {{ range $uncategorized }}
+          <article class="post-card" style="margin-bottom: 2rem;">
+            <h2 style="font-size: 1.35rem; font-weight: 600; margin-bottom: 0.35rem;">
+              <a href="{{ .RelPermalink }}" style="color: #6b21a8; text-decoration: none;">
+                {{ .Title }}
+              </a>
+            </h2>
+            <p style="color: #6b7280; font-size: 0.875rem; margin-top: 0; margin-bottom: 0.75rem;">
+              📅 {{ .Date.Format "January 2, 2006" }}
+            </p>
+            <p style="color: #374151; line-height: 1.6; margin: 0;">
+              {{ .Summary }}
+            </p>
+          </article>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+</main>
 {{ end }}
