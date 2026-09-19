@@ -3,10 +3,10 @@ title: "Upgrading to Convolutional Neural Networks (CNNs)"
 date: 2026-09-19
 draft: false
 math: true
+summary: "Why simple feedforward neural networks fall short on image data and how Convolutional Neural Networks (CNNs) solve parameter explosion and preserve spatial awareness."
 ---
 
-
-In our previous post, we explored how a standard Fully Connected Feedforward Neural Network classifies handwritten digits from the MNIST dataset. We flattened a $28 \times 28$ pixel image into a single 784-length vector, passed it through a hidden layer of 128 ReLU-activated neurons, and used a Sigmoid/Softmax output layer to predict the digit (0–9).
+In our previous post, we explored how a standard Fully Connected Feedforward Neural Network classifies handwritten digits from the MNIST dataset. We flattened a 28×28 pixel image into a single 784-length vector, passed it through a hidden layer of 128 ReLU-activated neurons, and used a Sigmoid/Softmax output layer to predict the digit (0–9).
 
 While that classic architecture works well for small, simple images, it suffers from severe limitations when scaled up. Today, we’ll look at **why** simple feedforward networks fall short and **how Convolutional Neural Networks (CNNs)** solve these problems to dominate the field of Computer Vision.
 
@@ -17,7 +17,7 @@ While that classic architecture works well for small, simple images, it suffers 
 Flattening an image into a 1D vector introduces two major drawbacks:
 
 1. **Loss of Spatial Awareness:** Flattening destroys 2D spatial relationships. A pixel's position relative to its neighbors—up, down, left, and right—contains crucial visual patterns like edges, corners, and curves. Converting an image to a 1D line forces the network to relearn these spatial relationships from scratch.
-2. **Explosion of Parameters:** In a fully connected setup, every pixel connects to every neuron in the hidden layer. For a tiny $28 \times 28$ image with 128 neurons, that’s $784 \times 128 = 100,352$ weights in just one layer. If we scale to a modern, high-resolution photo (e.g., $1080 \times 1080 \times 3$ color channels), a single layer would require **hundreds of millions of parameters**, leading to massive computational cost and severe overfitting.
+2. **Explosion of Parameters:** In a fully connected setup, every pixel connects to every neuron in the hidden layer. For a tiny 28×28 image with 128 neurons, that’s $784 \times 128 = 100,352$ weights in just one layer. If we scale to a modern, high-resolution photo (e.g., $1080 \times 1080 \times 3$ color channels), a single layer would require **hundreds of millions of parameters**, leading to massive computational cost and severe overfitting.
 
 ---
 
@@ -45,7 +45,7 @@ To reduce spatial dimensions and focus on essential features, CNNs insert **Pool
 * This reduces the width and height of the feature map (downscaling data size), lowers computational workload, and makes the model robust to small translations or shifts of the input digit.
 
 ### 4. Transitioning to Final Classification
-After multiple Convolution–ReLU–Pooling stages extract high-level feature maps (curves, loops, and visual components), the reduced features are finally flattened and passed into a fully connected layer with a **Softmax** activation function to output final class probabilities (0 through 9)
+After multiple Convolution–ReLU–Pooling stages extract high-level feature maps (curves, loops, and visual components), the reduced features are finally flattened and passed into a fully connected layer with a **Softmax** activation function to output final class probabilities (0 through 9).
 
 ---
 
