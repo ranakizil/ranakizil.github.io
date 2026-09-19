@@ -7,13 +7,13 @@ theme = 'hugo-book'
   # The name that appears at the top
   BookTitle = "rana's blog"
   
-  # Clean ChatGPT look: No search, no right-side table of contents
+  # Clean layout: No search, no right-side table of contents
   BookSearch = false
   BookToC = false
   BookTheme = 'light'
 
-  # Important: Points Hugo to your custom styles
-  customCSS = ["assets/custom.scss"]
+  # Correct parameter name for Hugo Book theme
+  BookCustomCSS = ["custom.css"]
 
   # Optional: Links for your sidebar
   BookRepo = 'https://github.com/ranakizil/ranakizil.github.io'
