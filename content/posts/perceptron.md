@@ -1,4 +1,3 @@
-
 ---
 title: "Understanding the Perceptron: The Building Block of Neural Networks"
 date: 2026-09-19
