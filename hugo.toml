@@ -3,20 +3,12 @@ languageCode = 'en-us'
 title = "rana's blog"
 theme = 'hugo-book'
 
+# Disable Categories and Tags widgets completely
+disableKinds = ["taxonomy", "term"]
+
 [params]
-  # Disable Categories and Tags widgets completely
-  disableKinds = ["taxonomy", "term"]
-  
-  # The name that appears at the top
   BookTitle = "rana's blog"
-  
-  # Clean layout: No search, no right-side table of contents
   BookSearch = false
   BookToC = false
   BookTheme = 'light'
-
-  # Correct parameter name for Hugo Book theme
-  BookCustomCSS = ["custom.css"]
-
-  # Optional: Links for your sidebar
-  BookRepo = 'https://github.com/ranakizil/ranakizil.github.io'
+  BookCustomCSS = ["custom.scss"]
