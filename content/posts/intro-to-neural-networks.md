@@ -37,7 +37,8 @@ In the "Hidden Layer" we use the **ReLu (The Rectified Linear Unit)** activation
 
 **ReLu (The Rectified Linear Unit)**
 
-![relu](/relu.png)
+<img src="/relu.png" alt="MNIST samples" style="width: 1000px; max-width: 100%; height: auto; display: block; margin: 1.5rem 0;">
+
 
 $$ReLU(z) = \max(0, z)$$
 
@@ -53,7 +54,7 @@ The far right column contains 10 neurons, labeled 0 through 9. In classification
 
 The Sigmoid activation function is shown inside the final 10 output neurons. It’s used to take any number the network produces and squash it into a range between 0 and 1, which we can then read as a probability.
 
-![sigmoid](/sigmoid.png)
+<img src="/sigmoid.png" alt="MNIST samples" style="width: 1000px; max-width: 100%; height: auto; display: block; margin: 1.5rem 0;">
 
 $$\sigma(z) = \frac{1}{1 + e^{-z}}$$
 
