@@ -3,7 +3,7 @@ title: "Upgrading to Convolutional Neural Networks (CNNs)"
 date: 2026-09-19
 draft: false
 math: true
-summary: "Why simple feedforward neural networks fall short on image data and how Convolutional Neural Networks (CNNs) solve parameter explosion and preserve spatial awareness."
+categories: ["Neural Networks and Deep Learning"]
 ---
 
 In our previous post, we explored how a standard Fully Connected Feedforward Neural Network classifies handwritten digits from the MNIST dataset. We flattened a 28×28 pixel image into a single 784-length vector, passed it through a hidden layer of 128 ReLU-activated neurons, and used a Sigmoid/Softmax output layer to predict the digit (0–9).
