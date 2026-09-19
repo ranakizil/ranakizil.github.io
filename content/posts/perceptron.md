@@ -6,11 +6,11 @@ math: true
 categories: ["Neural Networks and Deep Learning"]
 ---
 
-The **perceptron** is one of the simplest artificial neural network architectures, introduced by Frank Rosenblatt in 1958. It acts as a fundamental building block for modern deep learning.
+The **perceptron** is one of the simplest artificial neural network architectures. It acts as a fundamental building block for modern deep learning.
 
 At its core, a perceptron takes multiple binary or real-valued inputs, combines them using weights and a bias, and passes the result through an activation function to produce a single output.
 
-![Perceptron Diagram](/perceptron.png)
+![Perceptron Diagram](/perceptron_diagram.png)
 
 
 ## How a Perceptron Works
@@ -34,6 +34,9 @@ In vector form, this is often written as $z = \mathbf{w}^T \mathbf{x} + b$.
 Once $z$ is calculated, it passes through an **activation function** to determine the final output $y$.
 
 For a classic perceptron, we use a **Heaviside step function** (or unit step function):
+
+![Unit Step Plot](/unit_step_plot.png)
+
 
 $$
 y = \begin{cases} 0, & \text{if } z < 0 \\ 1, & \text{if } z \ge 0 \end{cases}
