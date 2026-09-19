@@ -1,44 +1,58 @@
 <style>
-  /* 1. Collapse the Hugo Book grid system into a single centered column */
-  .book-grid {
-    grid-template-columns: 0 1fr 0 !important;
-    max-width: 800px !important;
+  /* 1. Force the main wrapper layout from side-by-side row to single column */
+  .book-page,
+  .book-container,
+  main.book-page,
+  div.book-page {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    max-width: 900px !important;
+    width: 100% !important;
     margin: 0 auto !important;
-    padding: 0 1.5rem !important;
+    padding: 2rem 1.5rem !important;
+    float: none !important;
   }
 
-  /* 2. Style 'rana's blog' as a clean top header above the posts */
-  aside.book-menu, 
-  .book-menu {
-    grid-column: 2 / 3 !important;
+  /* 2. Position 'rana's blog' header on top spanning the full width */
+  .book-menu,
+  aside.book-menu,
+  .book-header {
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
     position: static !important;
-    padding: 2rem 0 1rem 0 !important;
+    margin-bottom: 2rem !important;
+    padding-bottom: 1rem !important;
     border-bottom: 1px solid #eaeaea !important;
     background: transparent !important;
   }
 
-  /* Hide navigation links inside the top header */
+  /* Hide menu links inside the header */
   .book-menu nav > ul {
     display: none !important;
   }
 
-  /* 3. Force main content to fill the center column */
-  main.book-page, 
-  .book-posts, 
-  .markdown {
-    grid-column: 2 / 3 !important;
+  /* Make header title text large */
+  .book-brand,
+  .book-menu a {
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+    color: #111 !important;
+  }
+
+  /* 3. Make main post list take up 100% width under the header */
+  .book-posts,
+  .markdown,
+  article {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
-    padding: 2rem 0 !important;
   }
 
-  /* 4. Completely remove the right-side table of contents/sidebar */
-  aside.book-toc, 
-  .book-toc {
+  /* 4. Hide right sidebar / categories / tags completely */
+  .book-toc,
+  aside.book-toc {
     display: none !important;
   }
 </style>
