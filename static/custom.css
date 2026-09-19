@@ -1,36 +1,61 @@
-/* 1. Hide the right-side layout column (Categories/Tags) */
+/* ==========================================================================
+   1. HIDE UNWANTED SIDEBARS
+   ========================================================================== */
+/* Completely hide the right column (Categories/Tags/ToC) */
 .book-toc,
-.book-toc-content,
-aside.book-toc {
+aside.book-toc,
+.book-header aside {
   display: none !important;
 }
 
-/* 2. Expand the main post content area to fill full width */
+/* Hide the default left sidebar navigation */
+.book-menu,
+aside.book-menu {
+  display: none !important;
+}
+
+
+/* ==========================================================================
+   2. CENTER & WIDEN CONTENT AREA
+   ========================================================================== */
+/* Expand the main content, remove left-offset margins, and center it */
 .book-page,
+main.book-page,
 .book-posts,
-main.book-page {
-  max-width: 100% !important;
+.markdown {
+  max-width: 800px !important;
   width: 100% !important;
-  padding-right: 0 !important;
+  margin: 0 auto !important;
+  padding: 2rem 1.5rem !important;
+  float: none !important;
 }
 
-/* 3. Move 'rana's blog' to the top header instead of the sidebar layout */
-.book-menu {
-  display: none !important; /* Hides left sidebar frame if needed */
-}
 
-/* Force container layout to display vertically (header on top, content below) */
+/* ==========================================================================
+   3. REPOSITION & STYLE "RANA'S BLOG" TITLE
+   ========================================================================== */
+/* Stack page layout vertically */
+body,
 .book-header {
-  display: block !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+/* Top site header styling */
+.book-header {
   width: 100% !important;
-  margin-bottom: 2rem !important;
-  border-bottom: 1px solid #e5e5e5;
-  padding-bottom: 1rem;
+  max-width: 800px !important;
+  margin: 0 auto 2.5rem auto !important;
+  padding-bottom: 1rem !important;
+  text-align: left !important; /* Change to 'center' if you want it centered */
+  border-bottom: 1px solid #eaeaea;
 }
 
 .book-header h1,
-.book-header .book-brand {
+.book-brand {
   font-size: 2rem !important;
-  font-weight: bold !important;
-  color: #000 !important;
+  font-weight: 700 !important;
+  color: #111111 !important;
+  margin: 0 !important;
 }
