@@ -1,5 +1,5 @@
 <style>
-  /* 1. Hide both sidebars completely */
+  /* 1. Hide left & right sidebars */
   aside.book-menu,
   .book-menu,
   aside.book-toc,
@@ -7,7 +7,23 @@
     display: none !important;
   }
 
-  /* 2. Center and widen the main post column */
+  /* 2. Style the new title at the top */
+  .custom-site-header {
+    width: 100% !important;
+    max-width: 800px !important;
+    margin: 0 auto 2rem auto !important;
+    padding: 2rem 0 1rem 0 !important;
+    border-bottom: 1px solid #eaeaea !important;
+  }
+
+  .custom-site-header a {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    color: #111111 !important;
+    text-decoration: none !important;
+  }
+
+  /* 3. Center and widen the blog posts container */
   .book-page,
   main.book-page,
   div.book-page,
@@ -15,20 +31,7 @@
     max-width: 800px !important;
     width: 100% !important;
     margin: 0 auto !important;
-    padding: 2rem 1.5rem !important;
+    padding: 0 1.5rem 2rem 1.5rem !important;
     float: none !important;
-  }
-
-  /* 3. Add 'rana's blog' directly at the top of the main container */
-  .book-posts::before,
-  main.book-page::before {
-    content: "rana's blog";
-    display: block;
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #111;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #eaeaea;
   }
 </style>
